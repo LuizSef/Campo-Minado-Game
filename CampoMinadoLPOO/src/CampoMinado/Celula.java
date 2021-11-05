@@ -1,4 +1,4 @@
-package CampoMinado;
+ package CampoMinado;
 
 import java.util.ArrayList;
 
