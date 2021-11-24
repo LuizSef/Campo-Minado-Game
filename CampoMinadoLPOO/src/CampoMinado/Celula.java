@@ -17,7 +17,7 @@ public class Celula {
 		this.marcado = false;
 		this.clicado = false;
 		
-		this.vizinhos = new ArrayList();
+		this.vizinhos = new ArrayList<Celula>();
 	}
 	
 	public void adicionarVizinhos(Celula e) {
@@ -68,4 +68,20 @@ public class Celula {
 		this.marcado = false;
 		this.clicado = false;
 	}
+	
+	
+	public String toString() {
+		if(this.minado) {
+		
+		return "-1";
+		}
+		
+		return  " " +this.numMinasVizinhos();
+	}
+	
+	
+	
+	
 }
+
+
