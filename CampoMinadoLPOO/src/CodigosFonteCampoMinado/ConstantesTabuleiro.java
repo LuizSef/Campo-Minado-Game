@@ -4,7 +4,7 @@ package CodigosFonteCampoMinado;
 // classe criada para facilitar o manuseio do código
 
 public abstract class ConstantesTabuleiro { 
-	static int nLinhas = 6;
-	static int nColunas= 6;
-	static int nMinas = 5;
+	public static int nLinhas = 6;
+	public static int nColunas= 6;
+	public static int nMinas = 5;
 }
