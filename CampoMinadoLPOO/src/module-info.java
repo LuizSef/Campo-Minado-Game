@@ -1,3 +1,2 @@
 module CampoMinadoLPOO {
-	exports CampoMinado;
 }
