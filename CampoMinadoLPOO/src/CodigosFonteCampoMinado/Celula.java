@@ -112,11 +112,21 @@ public class Celula {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { // printar as minas.
 		if (this.minado) {
 			return "-1";
 		}
 		return " " + this.numMinasVizinhos();
+	}
+	
+	public boolean finalizado() { // Condição das minas para finalizar o jogo.
+		if(this.minado && this.marcado) {
+			return true;
+		}
+		if(!this.minado && !this.marcado) {
+			return true;
+		}
+		return false;
 	}
 		
 }

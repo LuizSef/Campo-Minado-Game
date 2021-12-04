@@ -61,10 +61,7 @@ public class Tabuleiro {
 	   }
    }
    
-   
-    // Inserção randômica das minas nas células 
-    
-   public void inserirMinas() {
+   public void inserirMinas() { // Inserção randômica das minas nas células.
 	   int x = ConstantesTabuleiro.nMinas;
 	   Random rand = new Random();
 	   while (x > 0) {
@@ -75,9 +72,13 @@ public class Tabuleiro {
            }
 	   }
    }
+   
+   public int clicarButton(int linha, int coluna) { // Ação de clicar no button.
+	   return campo[linha][coluna].clicarCelula();
+   }
 
 	@Override
-	public String toString() {
+	public String toString() { // printar o tabuleiro.
 		String string = "";
 		
 		for (int l = 0; l < ConstantesTabuleiro.nLinhas; l++) {
@@ -87,5 +88,16 @@ public class Tabuleiro {
 			string += "\n";
 		}
 		return string;
-	}      
+	}
+	
+	public boolean GameOver() { // Game Over utilizando as condições das minas para finalizar.
+		for (int l = 0; l < ConstantesTabuleiro.nLinhas; l++) {
+			for (int c = 0; c < ConstantesTabuleiro.nColunas; c++) {
+				if (!campo[l][c].finalizado()) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }

@@ -7,4 +7,5 @@ public abstract class ConstantesTabuleiro {
 	public static int nLinhas = 6;
 	public static int nColunas= 6;
 	public static int nMinas = 5;
+	public static int tamanhoCelula = 30;
 }
