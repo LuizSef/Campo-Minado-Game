@@ -2,13 +2,16 @@ package CodigosFonteCampoMinado;
 
 import java.util.ArrayList;
 
+import InterfaceCampoMinado.InterfaceCelula;
+
 public class Celula {
-	private boolean minado; // Possui mina ou não.
+	public boolean minado; // Possui mina ou não.
 	private boolean revelado; // Mina revelada ou não.
 	private boolean marcado; // Marcado com bandeira ou não.
-	private boolean clicado; // A célula está clicada ou não.
+	public boolean clicado; // A célula está clicada ou não.
 	
-	private ArrayList<Celula> vizinhos; // Para que cada célula conte suas células vizinhas.
+	public ArrayList<Celula> vizinhos; // Para que cada célula conte suas células vizinhas.
+	public InterfaceCelula button; // ponte de comunicação do meio logico com o grafico
 	
 	public Celula() {
 		// Vai iniciar os atributos como false.
@@ -111,7 +114,7 @@ public class Celula {
 		this.clicado = false;
 	}
 
-	@Override
+	
 	public String toString() { // printar as minas.
 		if (this.minado) {
 			return "-1";
@@ -128,5 +131,9 @@ public class Celula {
 		}
 		return false;
 	}
+		public void setButton(InterfaceCelula button) {
+			this.button = button;
+		}
+
 		
 }

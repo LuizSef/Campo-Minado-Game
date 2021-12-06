@@ -77,7 +77,7 @@ public class Tabuleiro {
 	   return campo[linha][coluna].clicarCelula();
    }
 
-	@Override
+	
 	public String toString() { // printar o tabuleiro.
 		String string = "";
 		
@@ -99,5 +99,9 @@ public class Tabuleiro {
 			}
 		}
 		return true;
+	}
+	public Celula getCelula(int linha, int coluna) {
+		
+		return campo[linha][coluna];
 	}
 }
