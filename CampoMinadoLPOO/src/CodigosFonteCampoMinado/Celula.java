@@ -5,13 +5,15 @@ import java.util.ArrayList;
 import InterfaceCampoMinado.InterfaceCelula;
 
 public class Celula {
-	public boolean minado; // Possui mina ou não.
+	private boolean minado; // Possui mina ou não.
 	private boolean revelado; // Mina revelada ou não.
 	private boolean marcado; // Marcado com bandeira ou não.
-	public boolean clicado; // A célula está clicada ou não.
+	private boolean clicado; // A célula está clicada ou não.
+	//private boolean maluca; // Célula Maluca.
+
+	private ArrayList<Celula> vizinhos; // Para que cada célula conte suas células vizinhas.
 	
-	public ArrayList<Celula> vizinhos; // Para que cada célula conte suas células vizinhas.
-	public InterfaceCelula button; // ponte de comunicação do meio logico com o grafico
+	public InterfaceCelula button;
 	
 	public Celula() {
 		// Vai iniciar os atributos como false.
@@ -63,6 +65,18 @@ public class Celula {
 	public void setVizinhos(ArrayList<Celula> vizinhos) {
 		this.vizinhos = vizinhos;
 	}
+	
+	public void setInterfaceCelula(InterfaceCelula button) {
+		this.button = button;
+	}
+	
+	/*public boolean isMaluca() {
+		return maluca;
+	}
+
+	public void setMaluca(boolean maluca) {
+		this.maluca = maluca;
+	}*/
 
 	public void adicionarVizinhos(Celula e) {
 		this.vizinhos.add(e);
@@ -114,7 +128,7 @@ public class Celula {
 		this.clicado = false;
 	}
 
-	
+	@Override
 	public String toString() { // printar as minas.
 		if (this.minado) {
 			return "-1";
@@ -126,14 +140,20 @@ public class Celula {
 		if(this.minado && this.marcado) {
 			return true;
 		}
-		if(!this.minado && !this.marcado) {
+		if(!this.minado && !this.marcado && this.clicado) {
 			return true;
 		}
 		return false;
 	}
-		public void setButton(InterfaceCelula button) {
-			this.button = button;
+	
+	/*public boolean celulaMaluca() { // Célula maluca.
+		if (!this.maluca) {
+			this.maluca = true;
+			return true;
+		} else {
+			return false;
 		}
-
-		
+	}*/
 }
+		
+
